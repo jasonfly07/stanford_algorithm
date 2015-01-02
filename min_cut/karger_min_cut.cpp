@@ -155,6 +155,8 @@ int Graph::computeKargerOnce(){
 
 int Graph::computeKarger(){
     int n = V();
+    // This is the number of iterations that would guarantee a fail rate lower than 1/n
+    // However, the current algorithm is pretty slow, so lower this number if the graph is too big.
     int iterations = static_cast<int>( n*(n-1)*0.5*log(n) );
     int bestMin = numeric_limits<int>::max();
 
